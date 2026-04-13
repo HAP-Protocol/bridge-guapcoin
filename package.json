@@ -1,0 +1,20 @@
+{
+  "name": "@hap-protocol/bridge-guapcoin",
+  "version": "0.1.0",
+  "description": "HAP Bridge — smart contract for anchoring Human Authorship Protocol records on the Guapcoin blockchain",
+  "scripts": {
+    "compile": "hardhat compile",
+    "test": "hardhat test",
+    "deploy:testnet": "hardhat run scripts/deploy.ts --network guapcoin_testnet",
+    "deploy:mainnet": "hardhat run scripts/deploy.ts --network guapcoin_mainnet"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "hardhat": "^2.22.0",
+    "@nomicfoundation/hardhat-toolbox": "^5.0.0",
+    "@types/node": "^20.0.0",
+    "typescript": "^5.4.0",
+    "ts-node": "^10.9.0",
+    "dotenv": "^16.4.0"
+  }
+}
