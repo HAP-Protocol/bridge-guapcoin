@@ -5,8 +5,7 @@
   "scripts": {
     "compile": "hardhat compile",
     "test": "hardhat test",
-    "deploy:testnet": "hardhat run scripts/deploy.ts --network guapcoin_testnet",
-    "deploy:mainnet": "hardhat run scripts/deploy.ts --network guapcoin_mainnet"
+    "deploy": "hardhat run scripts/deploy.ts --network guapcoinx_mainnet"
   },
   "license": "MIT",
   "devDependencies": {

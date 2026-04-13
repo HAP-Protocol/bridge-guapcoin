@@ -6,6 +6,14 @@ Part of the [HAP-Protocol](https://github.com/HAP-Protocol) organization.
 
 ---
 
+## Deployed Contract
+
+| Network | Address |
+|---|---|
+| GuapcoinX Mainnet (chainId: 71111) | `0xD9208cFe3273CC78D863B2B14E2a597eabB0EE48` |
+
+---
+
 ## Overview
 
 The HAP Bridge stores compact authorship fingerprints on-chain. Full HAP records remain off-chain (IPFS) for efficiency — only a SHA-256 hash is anchored, binding the on-chain proof to the off-chain record.
@@ -53,12 +61,10 @@ npm run compile
 ## Deploy
 
 ```bash
-# Testnet
-npm run deploy:testnet
-
-# Mainnet
-npm run deploy:mainnet
+npm run deploy
 ```
+
+Deploys to GuapcoinX mainnet (chainId: 71111, RPC: https://rpc-mainnet-2.guapcoinx.com)
 
 ---
 
@@ -69,7 +75,7 @@ import { createHAPRecord, hashHAPRecord, hashContent } from '@hap-protocol/sdk';
 import { ethers } from 'ethers';
 import HAPBridgeABI from './artifacts/contracts/HAPBridge.sol/HAPBridge.json';
 
-const provider = new ethers.JsonRpcProvider(process.env.GUAPCOIN_MAINNET_RPC);
+const provider = new ethers.JsonRpcProvider('https://rpc-mainnet-2.guapcoinx.com');
 const signer = new ethers.Wallet(process.env.DEPLOYER_PRIVATE_KEY, provider);
 const bridge = new ethers.Contract(BRIDGE_ADDRESS, HAPBridgeABI.abi, signer);
 
